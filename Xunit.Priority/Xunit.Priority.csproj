@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.1;net452</TargetFrameworks>
-    <AssemblyName>xunit.priority</AssemblyName>
+    <AssemblyName>Xunit.Priority</AssemblyName>
     <RootNamespace>Xunit.Priority</RootNamespace>
   </PropertyGroup>
 

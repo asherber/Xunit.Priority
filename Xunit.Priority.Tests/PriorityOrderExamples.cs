@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Priority;
 
-namespace XUnit.Priority
+namespace Xunit.Priority.Tests
 {
 
     [TestCaseOrderer("Xunit.Priority.PriorityOrderer", "xunit.priority")]

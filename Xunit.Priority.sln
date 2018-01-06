@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Priority", "XUnit.Priority\XUnit.Priority.csproj", "{48A79852-5D52-4639-9140-F3408AD728BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xunit.Priority", "Xunit.Priority\Xunit.Priority.csproj", "{48A79852-5D52-4639-9140-F3408AD728BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Priority.Tests", "XUnit.Priority.Tests\XUnit.Priority.Tests.csproj", "{713138AA-F9E7-4F69-A263-C8F387F5B80C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xunit.Priority.Tests", "Xunit.Priority.Tests\Xunit.Priority.Tests.csproj", "{713138AA-F9E7-4F69-A263-C8F387F5B80C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

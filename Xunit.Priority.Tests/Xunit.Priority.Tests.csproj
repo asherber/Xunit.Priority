@@ -7,8 +7,8 @@
     <ProjectGuid>{713138AA-F9E7-4F69-A263-C8F387F5B80C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XUnit.Priority.Tests</RootNamespace>
-    <AssemblyName>XUnit.Priority.Tests</AssemblyName>
+    <RootNamespace>Xunit.Priority.Tests</RootNamespace>
+    <AssemblyName>Xunit.Priority.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -52,9 +52,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XUnit.Priority\XUnit.Priority.csproj">
+    <ProjectReference Include="..\Xunit.Priority\Xunit.Priority.csproj">
       <Project>{48a79852-5d52-4639-9140-f3408ad728be}</Project>
-      <Name>XUnit.Priority</Name>
+      <Name>Xunit.Priority</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
