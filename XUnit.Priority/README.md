@@ -6,3 +6,13 @@ Originally from https://github.com/xunit/samples.xunit/tree/master/TestOrderExam
 - Refactored `PriorityOrderer` 
 - Don't need separate `AlphabeticalOrderer`, because `PriorityOrderer` already does that as well
 
+
+
+## Usage
+
+Add the following attribute to classes where you want tests run in order:
+
+```csharp
+[TestCaseOrderer("Xunit.Priority.PriorityOrderer", "xunit.priority")]
+```
+
