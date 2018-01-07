@@ -10,6 +10,9 @@ namespace Xunit.Priority
 {
     public class PriorityOrderer : ITestCaseOrderer
     {
+        public const string Name = "Xunit.Priority.PriorityOrderer";
+        public const string Assembly = "Xunit.Priority";
+
         private static string _priorityAttribute = typeof(PriorityAttribute).AssemblyQualifiedName;
         private static string _priority = nameof(PriorityAttribute.Priority);
 

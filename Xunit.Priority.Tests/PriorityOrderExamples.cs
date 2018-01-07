@@ -9,7 +9,7 @@ using Xunit.Priority;
 namespace Xunit.Priority.Tests
 {
 
-    [TestCaseOrderer("Xunit.Priority.PriorityOrderer", "xunit.priority")]
+    [TestCaseOrderer(PriorityOrderer.Name, PriorityOrderer.Assembly)]
     public class PriorityOrderExamples
     {
         public static bool Test1Called;

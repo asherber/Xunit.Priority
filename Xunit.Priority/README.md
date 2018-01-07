@@ -1,4 +1,4 @@
-﻿# XUnit.Priority
+﻿# Xunit.Priority
 
 Originally from https://github.com/xunit/samples.xunit/tree/master/TestOrderExamples/TestCaseOrdering
 
@@ -13,6 +13,6 @@ Originally from https://github.com/xunit/samples.xunit/tree/master/TestOrderExam
 Add the following attribute to classes where you want tests run in order:
 
 ```csharp
-[TestCaseOrderer("Xunit.Priority.PriorityOrderer", "xunit.priority")]
+[TestCaseOrderer(PriorityOrderer.Name, PriorityOrderer.Assembly)]
 ```
 
