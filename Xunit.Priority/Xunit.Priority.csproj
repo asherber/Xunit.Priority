@@ -4,6 +4,11 @@
     <TargetFrameworks>netstandard1.1;net452</TargetFrameworks>
     <AssemblyName>Xunit.Priority</AssemblyName>
     <RootNamespace>Xunit.Priority</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Aaron Sherber</Authors>
+    <Copyright>2018</Copyright>
+    <PackageTags>xunit priority order</PackageTags>
+    <Company />
   </PropertyGroup>
 
   <ItemGroup>
