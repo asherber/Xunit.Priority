@@ -1,10 +1,14 @@
+![Icon](https://github.com/asherber/Xunit.Priority/raw/master/media/xunit-priority-64.png)
+
 # Xunit.Priority
+
+[![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority)
 
 Provides an `ITestCaseOrderer` that allows you to control the order of execution of Xunit tests within a class.
 
 Based closely on the code at https://github.com/xunit/samples.xunit/tree/master/TestOrderExamples/TestCaseOrdering
 
-**Note** that the Xunit folks [have](https://github.com/xunit/xunit/issues/980#issuecomment-248213473) [stated](https://github.com/xunit/xunit/issues/1301#issuecomment-305323239) that they don't believe that well-written unit tests should be dependent on being run in a particular order. Nevertheless, there are some testing scenarios which are not strict unit testing and which may require test ordering.
+**Note** that the Xunit folks [have](https://github.com/xunit/xunit/issues/980#issuecomment-248213473) [stated](https://github.com/xunit/xunit/issues/1301#issuecomment-305323239) that they don't believe that well-written unit tests should be dependent on being run in a particular order, which is why this functionality is not available as part of the core package. Nevertheless, there are some testing scenarios which are not strict unit testing and which may require test ordering.
 
 ## Usage
 
