@@ -17,15 +17,20 @@ Add the following attribute to classes for which you want tests run in order:
 Then decorate your test methods with the `Priority` attribute.
 
 ```csharp
-[Fact, Priority(10)]
-public void FirstTestToRun()
-{  
-}
+[Fact, Priority(-10)]
+public void FirstTestToRun() { }
 
-[Fact, Priority(20)]
-public void SecondTestToRun()
-{
-}
+[Fact, Priority(0)]
+public void SecondTestToRun() { }
+
+[Fact, Priority(10)]
+public void ThirdTestToRunA() { }
+
+[Fact, Priority(10)]
+public void ThirdTestToRunB() { }
+
+[Fact]
+public void TestsWithNoPriorityRunLast() { }
 ```
 
 - Priorities are evaluated in numeric order (including negative numbers)
