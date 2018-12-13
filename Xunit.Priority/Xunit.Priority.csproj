@@ -10,8 +10,9 @@
     <PackageTags>xunit priority order</PackageTags>
     <Company />
     <Description>Provides an ITestCaseOrderer that allows you to control the order of execution of Xunit tests within a class.</Description>
-    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/asherber/Xunit.Priority</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/asherber/Xunit.Priority</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://raw.githubusercontent.com/asherber/Xunit.Priority/master/media/xunit-priority-64.png</PackageIconUrl>
   </PropertyGroup>
 
