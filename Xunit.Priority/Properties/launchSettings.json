@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Xunit.Priority": {
+      "commandName": "Project"
+    }
+  }
+}

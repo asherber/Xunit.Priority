@@ -1,6 +1,6 @@
 ![Icon](https://github.com/asherber/Xunit.Priority/raw/master/media/xunit-priority-64.png)
 
-# Xunit.Priority [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority)
+# Xunit.Priority [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority) [![Build status](https://ci.appveyor.com/api/projects/status/h9kxm1ocxtcvf4iu/branch/master?svg=true)](https://ci.appveyor.com/project/asherber/xunit-priority/branch/master)
 
 Provides an `ITestCaseOrderer` that allows you to control the order of execution of Xunit tests within a class.
 
@@ -35,9 +35,22 @@ public void ThirdTestToRunB() { }
 public void TestsWithNoPriorityRunLast() { }
 ```
 
-### Notes
+Priorities are evaluated in numeric order (including 0 and negative numbers). If there are multiple tests with the same priority, those tests will be run in alphabetical order.
 
-- Priorities are evaluated in numeric order (including 0 and negative numbers)
-- Multiple tests with the same priority will be run in alphabetical order
-- Tests with no explicit `Priority` attribute are assigned priority `int.MaxValue` and will be run last
+By default, tests with no explicit `Priority` attribute are assigned priority `int.MaxValue` and will be run last. You can change this by setting a `DefaultPriority` attribute on your test class.
+
+```csharp
+[DefaultPriority(0)]
+public class MyTests
+{
+    [Fact]
+    public void SomeTest() { }
+    
+    [Fact]
+    public void SomeOtherTest() { }
+    
+    [Fact, Priority(10)]
+    public void RunMeLast() { }
+}
+```
 

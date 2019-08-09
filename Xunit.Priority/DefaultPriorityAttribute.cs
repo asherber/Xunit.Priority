@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  *  limitations under the License.
  */
- 
+
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Xunit.Priority
 {
-    /// <summary>
-    /// Indicates relative priority of tests for execution. Tests with the same
-    /// priority are run in alphabetical order. Tests with no priority are run last.
-    /// </summary>
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
-    public class PriorityAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
+    public class DefaultPriorityAttribute: Attribute
     {
-        public PriorityAttribute(int priority)
+        public DefaultPriorityAttribute(int priority)
         {
             Priority = priority;
         }
