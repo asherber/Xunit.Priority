@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.1;net452</TargetFrameworks>
+    <TargetFrameworks>netstandard1.1;netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Xunit.Priority</AssemblyName>
     <RootNamespace>Xunit.Priority</RootNamespace>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -10,7 +10,7 @@
     <PackageTags>xunit priority order</PackageTags>
     <Company />
     <Description>Provides an ITestCaseOrderer that allows you to control the order of execution of Xunit tests within a class.</Description>
-    <PackageReleaseNotes>Added DefaultPrority attribute</PackageReleaseNotes>
+    <PackageReleaseNotes>Added DefaultPrority attribute and netstandard2.0 build</PackageReleaseNotes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/asherber/Xunit.Priority</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
