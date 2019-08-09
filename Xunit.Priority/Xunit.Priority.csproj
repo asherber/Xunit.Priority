@@ -17,7 +17,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nerdbank.GitVersioning" Version="2.1.11" PrivateAssets="all" />
     <PackageReference Include="xunit.extensibility.core" Version="2.3.1" />
   </ItemGroup>
 
