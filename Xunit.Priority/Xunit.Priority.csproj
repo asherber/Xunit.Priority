@@ -16,6 +16,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://raw.githubusercontent.com/asherber/Xunit.Priority/master/media/xunit-priority-64.png</PackageIconUrl>
   </PropertyGroup>
+  
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591;1570;1587</NoWarn>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="xunit.extensibility.core" Version="2.3.1" />
