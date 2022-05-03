@@ -1,4 +1,4 @@
-![Icon](https://github.com/asherber/Xunit.Priority/raw/master/media/xunit-priority-64.png)
+![Icon](https://github.com/asherber/Xunit.Priority/blob/main/media/xunit-priority-64.png)
 
 # Xunit.Priority [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority) [![Build status](https://ci.appveyor.com/api/projects/status/h9kxm1ocxtcvf4iu/branch/master?svg=true)](https://ci.appveyor.com/project/asherber/xunit-priority/branch/master)
 
@@ -45,12 +45,11 @@ public class MyTests
 {
     [Fact]
     public void SomeTest() { }
-    
+
     [Fact]
     public void SomeOtherTest() { }
-    
+
     [Fact, Priority(10)]
     public void RunMeLast() { }
 }
 ```
-
