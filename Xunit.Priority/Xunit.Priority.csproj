@@ -18,6 +18,10 @@
   </PropertyGroup>
   
   <PropertyGroup>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  
+  <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DocumentationFile>$(AssemblyName).xml</DocumentationFile>
     <NoWarn>$(NoWarn);1591;1570;1587</NoWarn>
