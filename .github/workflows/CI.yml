@@ -1,0 +1,39 @@
+name: CI
+on: [ push, pull_request, workflow_dispatch ]
+jobs:
+  Build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8
+          
+      - name: NuGet cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: Build
+        run: |
+          dotnet restore --locked-mode
+          dotnet build
+        
+      - name: Test
+        run: dotnet test --no-build -v normal --logger trx
+        
+      - name: Publish unit test report
+        uses: dorny/test-reporter@v1.9
+        if: success() || failure()
+        with:
+          name: Unit Test Report
+          path: '**/*.trx'
+          reporter: dotnet-trx

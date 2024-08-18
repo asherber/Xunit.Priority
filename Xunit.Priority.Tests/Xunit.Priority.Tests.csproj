@@ -16,4 +16,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Xunit.Priority\Xunit.Priority.csproj" />
   </ItemGroup>
+  
+  <PropertyGroup>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
 </Project>
