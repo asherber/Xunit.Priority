@@ -26,9 +26,6 @@ namespace Xunit.v3.Priority
 {
     public class PriorityOrderer : ITestCaseOrderer
     {
-        public const string Name = "Xunit.v3.Priority.PriorityOrderer";
-        public const string Assembly = "Xunit.v3.Priority";
-
         private static ConcurrentDictionary<string, int> _defaultPriorities = new ConcurrentDictionary<string, int>();
 
         public IReadOnlyCollection<TTestCase> OrderTestCases<TTestCase>(IReadOnlyCollection<TTestCase> testCases) where TTestCase : ITestCase

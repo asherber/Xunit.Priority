@@ -6,9 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
 
+#if V3
+namespace Xunit.v3.Priority.Tests
+#else
 namespace Xunit.Priority.Tests
+#endif
 {
+#if V3
+    [TestCaseOrderer(typeof(PriorityOrderer))]
+#else
     [TestCaseOrderer(PriorityOrderer.Name, PriorityOrderer.Assembly)]
+#endif
     public abstract class TestsBase
     {
         private FieldInfo _counterField;

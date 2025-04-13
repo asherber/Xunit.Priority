@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net472</TargetFrameworks>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <OutputType>exe</OutputType>
+    <DefineConstants>V3</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Xunit.Priority.Tests\BasicPriorityTests.cs" Link="BasicPriorityTests.cs" />
+    <Compile Include="..\Xunit.Priority.Tests\NoPriorityTests.cs" Link="NoPriorityTests.cs" />
+    <Compile Include="..\Xunit.Priority.Tests\OnePriorityMinDefaultTests.cs" Link="OnePriorityMinDefaultTests.cs" />
+    <Compile Include="..\Xunit.Priority.Tests\PriorityWithMaxDefaultTests.cs" Link="PriorityWithMaxDefaultTests.cs" />
+    <Compile Include="..\Xunit.Priority.Tests\PriorityWithZeroDefault.cs" Link="PriorityWithZeroDefault.cs" />
+    <Compile Include="..\Xunit.Priority.Tests\TestsBase.cs" Link="TestsBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit.v3" Version="2.0.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.0.2" />
+    <PackageReference Include="FluentAssertions" Version="5.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Xunit.v3.Priority\Xunit.v3.Priority.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+
+</Project>

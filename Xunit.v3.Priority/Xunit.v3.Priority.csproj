@@ -14,4 +14,8 @@
     <PackageReference Include="xunit.v3.extensibility.core" Version="2.0.1" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+
 </Project>

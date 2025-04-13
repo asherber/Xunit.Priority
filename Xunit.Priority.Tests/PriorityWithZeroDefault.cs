@@ -4,10 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Priority;
 using FluentAssertions;
 
+#if V3
+using Xunit.v3.Priority;
+
+namespace Xunit.v3.Priority.Tests
+#else
+using Xunit.Priority;
+
 namespace Xunit.Priority.Tests
+#endif
 {
     [DefaultPriority(0)]
     public class PriorityWithZeroDefault: TestsBase
