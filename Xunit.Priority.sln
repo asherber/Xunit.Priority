@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29123.88
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Priority", "Xunit.Priority\Xunit.Priority.csproj", "{48A79852-5D52-4639-9140-F3408AD728BE}"
 EndProject
@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 		version.json = version.json
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xunit.v3.Priority", "Xunit.v3.Priority\Xunit.v3.Priority.csproj", "{4EFC4075-C0EB-4AF7-AB93-95239435C0C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +30,10 @@ Global
 		{713138AA-F9E7-4F69-A263-C8F387F5B80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{713138AA-F9E7-4F69-A263-C8F387F5B80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{713138AA-F9E7-4F69-A263-C8F387F5B80C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EFC4075-C0EB-4AF7-AB93-95239435C0C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFC4075-C0EB-4AF7-AB93-95239435C0C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFC4075-C0EB-4AF7-AB93-95239435C0C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFC4075-C0EB-4AF7-AB93-95239435C0C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

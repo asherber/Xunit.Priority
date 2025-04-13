@@ -20,7 +20,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+#if V3
+namespace Xunit.v3.Priority
+#else
 namespace Xunit.Priority
+#endif
 {
     /// <summary>
     /// Indicates the priority value which will be assigned

@@ -16,7 +16,11 @@
  
 using System;
 
+#if V3
+namespace Xunit.v3.Priority
+#else
 namespace Xunit.Priority
+#endif
 {
     /// <summary>
     /// <para>Indicates relative priority of tests for execution. Tests with the same
