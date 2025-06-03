@@ -17,8 +17,14 @@ Based closely on the code at https://github.com/xunit/samples.xunit/tree/main/Te
 
 Add the following attribute to classes for which you want tests run in order:
 
+### Xunit.Priority
 ```csharp
 [TestCaseOrderer(PriorityOrderer.Name, PriorityOrderer.Assembly)]
+```
+
+### Xunit.Priority.v3
+```csharp
+[TestCaseOrderer(typeof(PriorityOrderer))]
 ```
 
 Then decorate your test methods with the `Priority` attribute.
