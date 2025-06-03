@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461;net8.0</TargetFrameworks>
+    <AssemblyName>Xunit.Priority.v3</AssemblyName>
+    <RootNamespace>Xunit.Priority.v3</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Aaron Sherber</Authors>
+    <Copyright>2018-2019</Copyright>
+    <PackageTags>xunit priority order</PackageTags>
+    <Company />
+    <Description>Provides an ITestCaseOrderer that allows you to control the order of execution of Xunit tests within a class.</Description>
+    <PackageReleaseNotes>Added DefaultPrority attribute and netstandard2.0 build</PackageReleaseNotes>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/asherber/Xunit.Priority</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIconUrl>https://raw.githubusercontent.com/asherber/Xunit.Priority/master/media/xunit-priority-64.png</PackageIconUrl>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591;1570;1587</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="xunit.v3.extensibility.core" Version="2.0.2" />
+  </ItemGroup>
+
+</Project>

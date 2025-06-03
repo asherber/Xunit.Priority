@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xunit.Priority</name>
+    </assembly>
+    <members>
+        <member name="T:Xunit.Priority.DefaultPriorityAttribute">
+            <summary>
+            Indicates the priority value which will be assigned
+            to tests in this class which don't have a <see cref="T:Xunit.Priority.PriorityAttribute"/>.
+            </summary>
+        </member>
+        <member name="T:Xunit.Priority.PriorityAttribute">
+            <summary>
+            <para>Indicates relative priority of tests for execution. Tests with the same
+            priority are run in alphabetical order. </para>
+            
+            <para>Tests with no priority attribute
+            are assigned a priority of <see cref="F:System.Int32.MaxValue"/>,
+            unless the class has a <see cref="T:Xunit.Priority.DefaultPriorityAttribute"/>.</para>
+            </summary>
+        </member>
+    </members>
+</doc>
