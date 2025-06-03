@@ -72,9 +72,8 @@ namespace Xunit.Priority.v3
             var testClass = testCase.TestMethod.TestClass.Class;
             if (!_defaultPriorities.TryGetValue(testClass.Name, out var result))
             {
-                var defaultAttribute = testCase.TestMethod.Method
-                    .GetCustomAttributes<DefaultPriorityAttribute>()
-                    .SingleOrDefault();
+                // Check for DefaultPriority on the class
+                var defaultAttribute = testClass.GetCustomAttributes<DefaultPriorityAttribute>().SingleOrDefault();
                 result = defaultAttribute?.Priority ?? int.MaxValue;
                 _defaultPriorities[testClass.Name] = result;
             }
