@@ -1,6 +1,11 @@
 ![Icon](https://github.com/asherber/Xunit.Priority/blob/main/media/xunit-priority-64.png)
 
-# Xunit.Priority [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority) [![Build status](https://github.com/asherber/Xunit.Priority/actions/workflows/CI.yml/badge.svg)](https://github.com/asherber/Xunit.Priority/actions)
+# Xunit.Priority [![Build status](https://github.com/asherber/Xunit.Priority/actions/workflows/CI.yml/badge.svg)](https://github.com/asherber/Xunit.Priority/actions)
+
+| Package                | Supported xUnit Version | NuGet                                                                                  |
+|------------------------|------------------------|----------------------------------------------------------------------------------------|
+| Xunit.Priority         | xunit v2               | [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority)         |
+| Xunit.Priority.v3      | xunit v3               | [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.v3.svg)](https://nuget.org/packages/Xunit.Priority.v3)   |
 
 Provides an `ITestCaseOrderer` that allows you to control the order of execution of Xunit tests within a class.
 
