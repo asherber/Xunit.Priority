@@ -1,6 +1,11 @@
 ![Icon](https://github.com/asherber/Xunit.Priority/blob/main/media/xunit-priority-64.png)
 
-# Xunit.Priority [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority) [![Build status](https://github.com/asherber/Xunit.Priority/actions/workflows/CI.yml/badge.svg)](https://github.com/asherber/Xunit.Priority/actions)
+# Xunit.Priority [![Build status](https://github.com/asherber/Xunit.Priority/actions/workflows/CI.yml/badge.svg)](https://github.com/asherber/Xunit.Priority/actions)
+
+| Package                | Supported xUnit Version | NuGet                                                                                  |
+|------------------------|------------------------|----------------------------------------------------------------------------------------|
+| Xunit.Priority         | xunit v2               | [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority)         |
+| Xunit.v3.Priority   | xunit v3               | [![NuGet](https://img.shields.io/nuget/v/Xunit.v3.Priority.svg)](https://nuget.org/packages/Xunit.v3.Priority)   |
 
 Provides an `ITestCaseOrderer` that allows you to control the order of execution of Xunit tests within a class.
 
@@ -13,7 +18,11 @@ Based closely on the code at https://github.com/xunit/samples.xunit/tree/main/Te
 Add the following attribute to classes for which you want tests run in order:
 
 ```csharp
+// for Xunit.Priority
 [TestCaseOrderer(PriorityOrderer.Name, PriorityOrderer.Assembly)]
+
+// for Xunit.v3.Priority
+[TestCaseOrderer(typeof(PriorityOrderer))]
 ```
 
 Then decorate your test methods with the `Priority` attribute.
