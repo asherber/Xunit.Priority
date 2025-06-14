@@ -58,7 +58,9 @@ namespace Xunit.v3.Priority
 
         private int PriorityForTest(IXunitTestCase testCase, int defaultPriority) 
         {
-            var priorityAttribute = testCase.TestMethod.Method.GetCustomAttribute<PriorityAttribute>(true);
+            var priorityAttribute = testCase.TestMethod.Method
+                .GetCustomAttributes<PriorityAttribute>()
+                .SingleOrDefault();
             return priorityAttribute?.Priority ?? defaultPriority;
         }
 
@@ -67,7 +69,7 @@ namespace Xunit.v3.Priority
             var testClass = testCase.TestMethod.TestClass.Class;
             if (!_defaultPriorities.TryGetValue(testClass.Name, out var result))
             {
-                var defaultAttribute = testClass.GetCustomAttribute<PriorityAttribute>(true);
+                var defaultAttribute = testClass.GetCustomAttributes<DefaultPriorityAttribute>().SingleOrDefault();
                 result = defaultAttribute?.Priority ?? int.MaxValue;
                 _defaultPriorities[testClass.Name] = result;
             }
