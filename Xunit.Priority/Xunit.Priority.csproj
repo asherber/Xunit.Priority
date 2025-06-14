@@ -14,8 +14,15 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/asherber/Xunit.Priority</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageIconUrl>https://raw.githubusercontent.com/asherber/Xunit.Priority/master/media/xunit-priority-64.png</PackageIconUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>xunit-priority-64.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="../media/xunit-priority-64.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
   
   <PropertyGroup>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>

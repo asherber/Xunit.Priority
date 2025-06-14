@@ -1,4 +1,4 @@
-![Icon](https://github.com/asherber/Xunit.Priority/blob/main/media/xunit-priority-64.png)
+![Icon](https://raw.githubusercontent.com/asherber/Xunit.Priority/main/media/xunit-priority-64.png)
 
 # Xunit.Priority [![Build status](https://github.com/asherber/Xunit.Priority/actions/workflows/CI.yml/badge.svg)](https://github.com/asherber/Xunit.Priority/actions)
 

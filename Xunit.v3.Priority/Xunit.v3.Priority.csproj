@@ -3,12 +3,34 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <DefineConstants>V3</DefineConstants>
+    <AssemblyName>Xunit.v3.Priority</AssemblyName>
+    <RootNamespace>Xunit.v3.Priority</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Aaron Sherber</Authors>
+    <Copyright>2018-2025</Copyright>
+    <PackageTags>xunit priority order</PackageTags>
+    <Company />
+    <Description>Provides an ITestCaseOrderer that allows you to control the order of execution of Xunit tests within a class.</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/asherber/Xunit.Priority</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>xunit-priority-64.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="..\Xunit.Priority\DefaultPriorityAttribute.cs" Link="DefaultPriorityAttribute.cs" />
     <Compile Include="..\Xunit.Priority\PriorityAttribute.cs" Link="PriorityAttribute.cs" />
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="../media/xunit-priority-64.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591;1570;1587</NoWarn>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="xunit.v3.extensibility.core" Version="2.0.1" />
