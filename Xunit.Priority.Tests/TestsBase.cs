@@ -13,7 +13,7 @@ namespace Xunit.Priority.Tests
 #endif
 {
 #if V3
-    [TestCaseOrderer(typeof(PriorityOrderer))]
+    [TestMethodOrderer<PriorityOrderer>]
 #else
     [TestCaseOrderer(PriorityOrderer.Name, PriorityOrderer.Assembly)]
 #endif

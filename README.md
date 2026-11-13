@@ -2,10 +2,11 @@
 
 # Xunit.Priority [![Build status](https://github.com/asherber/Xunit.Priority/actions/workflows/CI.yml/badge.svg)](https://github.com/asherber/Xunit.Priority/actions)
 
-| Package                | Supported xUnit Version | NuGet                                                                                  |
-|------------------------|------------------------|----------------------------------------------------------------------------------------|
-| Xunit.Priority         | xunit v2               | [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority)         |
-| Xunit.v3.Priority   | xunit v3               | [![NuGet](https://img.shields.io/nuget/v/Xunit.v3.Priority.svg)](https://nuget.org/packages/Xunit.v3.Priority)   |
+| Package               | Supported xUnit Version | NuGet                                                                                                                    |
+|-----------------------|-------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| Xunit.Priority        | xunit v2                | [![NuGet](https://img.shields.io/nuget/v/Xunit.Priority.svg)](https://nuget.org/packages/Xunit.Priority)                 |
+| Xunit.v3.Priority 1.x | xunit v3 (2.x to 3.x )  | [![NuGet](https://img.shields.io/badge/nuget-v1.1.18-blue.svg)](https://www.nuget.org/packages/Xunit.v3.Priority/1.1.18) |
+| Xunit.v3.Priority 2.x | xunit v3 (4.x)          | [![NuGet](https://img.shields.io/nuget/v/Xunit.v3.Priority.svg)](https://nuget.org/packages/Xunit.v3.Priority)           |
 
 Provides an `ITestCaseOrderer` that allows you to control the order of execution of Xunit tests within a class.
 
@@ -21,8 +22,11 @@ Add the following attribute to classes for which you want tests run in order:
 // for Xunit.Priority
 [TestCaseOrderer(PriorityOrderer.Name, PriorityOrderer.Assembly)]
 
-// for Xunit.v3.Priority
+// for Xunit.v3.Priority 1.x
 [TestCaseOrderer(typeof(PriorityOrderer))]
+
+// for Xunit.v3.Priority 2.x
+[TestMethodOrderer<PriorityOrderer>]
 ```
 
 Then decorate your test methods with the `Priority` attribute.

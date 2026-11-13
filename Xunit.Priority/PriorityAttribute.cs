@@ -15,6 +15,8 @@
  */
  
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 
 #if V3
 namespace Xunit.v3.Priority
@@ -32,6 +34,9 @@ namespace Xunit.Priority
     /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public class PriorityAttribute : Attribute
+#if V3
+        , ITraitAttribute
+#endif
     {
         public PriorityAttribute(int priority)
         {
@@ -39,5 +44,10 @@ namespace Xunit.Priority
         }
 
         public int Priority { get; private set; }
+
+        internal const string TraitKey = nameof(Priority);
+
+        public IReadOnlyCollection<KeyValuePair<string, string>> GetTraits()
+            => [new(TraitKey, Priority.ToString(CultureInfo.InvariantCulture))];
     }
 }
