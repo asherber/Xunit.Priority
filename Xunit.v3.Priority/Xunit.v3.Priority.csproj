@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <LangVersion>14.0</LangVersion>
+    <Nullable>enable</Nullable>
     <DefineConstants>V3</DefineConstants>
     <AssemblyName>Xunit.v3.Priority</AssemblyName>
     <RootNamespace>Xunit.v3.Priority</RootNamespace>
@@ -33,7 +35,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="xunit.v3.extensibility.core" Version="2.0.1" />
+    <PackageReference Include="xunit.v3.extensibility.core" Version="4.0.0" />
   </ItemGroup>
 
   <PropertyGroup>

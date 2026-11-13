@@ -15,66 +15,34 @@
  */
  
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using Xunit.v3;
 using Xunit.Sdk;
-using System.Reflection;
 
 namespace Xunit.v3.Priority
 {
-    public class PriorityOrderer : ITestCaseOrderer
+    public class PriorityOrderer : ITestMethodOrderer
     {
-        private static ConcurrentDictionary<string, int> _defaultPriorities = new ConcurrentDictionary<string, int>();
-
-        public IReadOnlyCollection<TTestCase> OrderTestCases<TTestCase>(IReadOnlyCollection<TTestCase> testCases) where TTestCase : ITestCase
+        public IReadOnlyCollection<TTestMethod> OrderTestMethods<TTestMethod>(IReadOnlyCollection<TTestMethod?> testMethods) where TTestMethod : ITestMethod
         {
-            var groupedTestCases = new Dictionary<int, List<ITestCase>>();
-            var defaultPriorities = new Dictionary<Type, int>();
-
-            foreach (IXunitTestCase testCase in testCases)
-            {
-                var defaultPriority = DefaultPriorityForClass(testCase);
-                var priority = PriorityForTest(testCase, defaultPriority);
-                
-                if (!groupedTestCases.ContainsKey(priority))
-                    groupedTestCases[priority] = new List<ITestCase>();
-
-                groupedTestCases[priority].Add(testCase);
-            }
-
-            var result = new List<TTestCase>();
-
-            var orderedKeys = groupedTestCases.Keys.OrderBy(k => k);            
-            foreach (var list in orderedKeys.Select(priority => groupedTestCases[priority]))
-            {
-                list.Sort((x, y) => StringComparer.OrdinalIgnoreCase.Compare(x.TestMethod.MethodName, y.TestMethod.MethodName));
-                result.AddRange(list.Cast<TTestCase>());                
-            }
-
-            return result;
+            var methodsByPriority = testMethods.OfType<TTestMethod>().GroupBy(Priority).ToDictionary(g => g.Key);
+            return
+            [
+                .. methodsByPriority.Keys.OrderBy(k => k)
+                    .Select(priority => methodsByPriority[priority])
+                    .SelectMany(methods => methods.OrderBy(m => m.MethodName, StringComparer.OrdinalIgnoreCase)),
+            ];
         }
 
-        private int PriorityForTest(IXunitTestCase testCase, int defaultPriority) 
+        private static int Priority<TTestMethod>(TTestMethod testMethod) where TTestMethod : ITestMethod
         {
-            var priorityAttribute = testCase.TestMethod.Method
-                .GetCustomAttributes<PriorityAttribute>()
-                .SingleOrDefault();
-            return priorityAttribute?.Priority ?? defaultPriority;
-        }
-
-        private int DefaultPriorityForClass(IXunitTestCase testCase)
-        {
-            var testClass = testCase.TestMethod.TestClass.Class;
-            if (!_defaultPriorities.TryGetValue(testClass.Name, out var result))
+            if (testMethod.Traits.TryGetValue(PriorityAttribute.TraitKey, out var priority) && priority.Count > 0)
             {
-                var defaultAttribute = testClass.GetCustomAttributes<DefaultPriorityAttribute>().SingleOrDefault();
-                result = defaultAttribute?.Priority ?? int.MaxValue;
-                _defaultPriorities[testClass.Name] = result;
+                // Traits are merged in class -> method order, see https://github.com/xunit/xunit/blob/v3-4.0.0/src/xunit.v3.core/Utility/ExtensibilityPointFactory.TestMethod_reflection.cs#L94-L104
+                // So if both [DefaultPriority] (class only) and [Priority] (method only) are defined, the value of [Priority] will be last
+                return int.Parse(priority.Last());
             }
-
-            return result;
+            return int.MaxValue;
         }
     }
 }
